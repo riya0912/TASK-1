@@ -1,0 +1,60 @@
+From 954d0f8c18baed3b2ee3e7c8471d0d351becc631 Mon Sep 17 00:00:00 2001
+From: riya0912 <singh.riya@120920@gmail.com>
+Date: Thu, 29 Sep 2022 19:57:14 +0530
+Subject: [PATCH] Create Patch File
+
+---
+ 0001-Create-Patch-File.patch | 41 ------------------------------------
+ 1 file changed, 41 deletions(-)
+ delete mode 100644 0001-Create-Patch-File.patch
+
+diff --git a/0001-Create-Patch-File.patch b/0001-Create-Patch-File.patch
+deleted file mode 100644
+index 50667a5..0000000
+--- a/0001-Create-Patch-File.patch
++++ /dev/null
+@@ -1,41 +0,0 @@
+-From 97922aadecefbe6c89b938ee775f2da8b07e33a8 Mon Sep 17 00:00:00 2001
+-From: riya0912 <singh.riya@120920@gmail.com>
+-Date: Thu, 29 Sep 2022 19:50:41 +0530
+-Subject: [PATCH] Create Patch File
+-
+----
+- client.py | 10 +++++-----
+- 1 file changed, 5 insertions(+), 5 deletions(-)
+-
+-diff --git a/client.py b/client.py
+-index 3fc09b7..f77d9d4 100644
+---- a/client.py
+-+++ b/client.py
+-@@ -35,14 +35,14 @@ def getDataPoint(quote):
+-     stock = quote['stock']
+-     bid_price = float(quote['top_bid']['price'])
+-     ask_price = float(quote['top_ask']['price'])
+--    price = bid_price
+-+    price = (bid_price + ask_price)/2
+-     return stock, bid_price, ask_price, price
+- 
+- 
+- def getRatio(price_a, price_b):
+--    """ Get ratio of price_a and price_b """
+--    """ ------------- Update this function ------------- """
+--    return 1
+-+    if( price_b==0):
+-+        return
+-+    return price_a/price_b
+- 
+- 
+- # Main
+-@@ -56,4 +56,4 @@ if __name__ == "__main__":
+-             stock, bid_price, ask_price, price = getDataPoint(quote)
+-             print("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
+- 
+--        print("Ratio %s" % getRatio(price, price))
+-+        print("Ratio %s" % getRatio(price['ABC'],price['DEF']))
+--- 
+-2.33.0.windows.2
+-
+-- 
+2.33.0.windows.2
+
